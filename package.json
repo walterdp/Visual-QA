@@ -1,0 +1,67 @@
+{
+  "name": "visual-qa",
+  "version": "1.0.0",
+  "description": "Ejemplo de pruebas visuales con cypress y percy",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:firefox": "cypress run --browser firefox",
+    "cy:edge": "cypress run --browser edge",
+    "cy:cross:browsers": "npm run cy:chrome || cy:firefox || cy:edge",
+    "cy:headless-chrome": "cypress run --headless --browser chrome",
+    "cy:headless-firefox": "cypress run --headless --browser firefox",
+    "cy:headless-edge": "cypress run --headless --browser edge",
+    "cy:cross:headless-browsers": "npm run cy:run:headless-chrome || cy:run:headless-firefox || cy:run:headless-edge",
+    "cy:test:chrome": "cypress run --browser chrome --spec",
+    "cy:test:firefox": "cypress run --browser firefox  --spec",
+    "cy:test:edge": "cypress run --browser edge --spec",
+    "cy:test:headless-chrome": "cypress run --headless --browser chrome --spec",
+    "cy:test:headless-firefox": "cypress run --headless --browser firefox --spec",
+    "cy:test:headless-edge": "cypress run --headless --browser edge --spec",
+    "cy:record": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5",
+    "cy:record:chrome": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --browser chrome",
+    "cy:record:firefox": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --browser firefox",
+    "cy:record:edge": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --browser edge",
+    "cy:record:headless-chrome": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --headless --browser chrome",
+    "cy:record:headless-firefox": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --headless --browser firefox",
+    "cy:record:headless-edge": "cypress run --record --key e02a0ea4-3052-45fb-8a8c-6cbad5e431c5 --headless --browser edge",
+    "cy:run:browserstack": "browserstack-cypress run --sync",
+    "cy:test:browserstack": "browserstack-cypress run --sync --specs",
+    "cy:browserstack:exclude": "browserstack-cypress run --sync --exclude",
+    "cy:run:browserstack-report": "browserstack-cypress generate-report",
+    "cy:reporter:mocha": "cypress run --browser chrome rm *.json --reporter mochawesome",
+    "cy:combine:reports": "mochawesome-merge cypress/automation-report/reports/*.json > cypress/automation-report/Automation-Test-Report.json",
+    "cy:report": "marge cypress/automation-report/Automation-Test-Report.json --reportDir ./ --inline",
+    "cy:info": "cypress info",
+    "cy:verify": "cypress verify",
+    "cy:version": "cypress version",
+    "cy:cache": "cypress cache path",
+    "cy:cache:list": "cypress cache list --size",
+    "cy:cache:clear": "cypress cache clear",
+    "cy:percy": "percy exec -- cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walterdp/Visual-QA.git"
+  },
+  "keywords": [
+    "cypress",
+    "percy",
+    "qa",
+    "automation"
+  ],
+  "author": "QA Automation Walter Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walterdp/Visual-QA/issues"
+  },
+  "homepage": "https://github.com/walterdp/Visual-QA#readme",
+  "dependencies": {
+    "cypress": "^9.2.0"
+  },
+  "devDependencies": {
+    "@percy/cli": "^1.0.0-beta.71",
+    "@percy/cypress": "^3.1.1"
+  }
+}
